@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicWhat</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/themes/comicWarpTheme.css"/>
+    <link rel="stylesheet" href="css/themes/comicWarpTheme.min.css"/>
+    <!-- Reference the JQM CSS to unlock basic sytling -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <!-- Reference the jQuery JS file to access JavaScript power features  -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- Reference the jQM JS file to access interface building features -->
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!-- Reference to project css-->
+    <link href="css/app.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <section data-role="page" id="pgWelcome">
+        <header data-role="header" data-theme="c">
+            <h1>Comic Warp</h1>
+        </header><!-- /header -->
+        <article role="main" class="ui-content">
+            <h2 class="mc-text-center">Welcome!</h2>
+            <p class="mc-top-margin-1-5"><b>Existing users</b></p>
+            <a href="#pgSignIn" class="ui-btn ui-btn-b ui-corner-all">sign in</a>
+            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
+            <a href="#pgSignUp" class="ui-btn ui-btn-b ui-corner-all">sign up</a>
+            <p></p>
+        </article><!-- /content -->
+    </section><!-- /page -->
+
+    <section data-role="page" id="pgSignIn">
+        <header data-role="header" data-theme="c">
+            <a href="#pgWelcome" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">back</a>
+            <h1>Let's Get Started...</h1>
+        </header><!-- /header -->
+        <article role="main" class="ui-content">
+            <h3>sign in</h3>
+            <label for="email">email address</label>
+            <input type="email" name="email" id="email" value="">
+            <label for="txt-password">password</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <fieldset data-role="controlgroup">
+                <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+                <label for="chck-rememberme">remember me</label>
+            </fieldset>
+            <a href="#pgHome" class="ui-btn ui-btn-b ui-corner-all" data-transition="flow">submit</a>
+            <!-- <a href="#pgHome" data-rel="popup" data-transition="flow" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">submit</a> -->
+            <p class="mc-top-margin-1-5"><a href="#PasswordReset">can't access your account?</a></p>
+            <section data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
+                <article role="main" class="ui-content">
+                    <h3 class="mc-text-danger">login failed</h3>
+                    <p>did you enter the right credentials?</p>
+                    <section class="mc-text-center"><a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">ok</a></section>
+                </article>
+            </section>
+        </article><!-- /content -->
+    </section>
+
+    <section data-role="page" id="pgSignUp">
+        <header data-role="header" data-theme="c">
+            <a href="#pgWelcome" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">back</a>
+            <h1>I want in!</h1>
+        </header><!-- /header -->
+        <article role="main" class="ui-content">
+            <h3>sign up</h3>
+            <label for="txt-first-name">first name</label>
+            <input type="text" name="txt-first-name" id="txt-first-name" value="">
+            <label for="txt-last-name">last name</label>
+            <input type="text" name="txt-last-name" id="txt-last-name" value="">
+            <label for="email">email address</label>
+            <input type="email" name="email" id="email" value="">
+            <label for="txt-password">password</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <label for="txt-password-confirm">confirm password</label>
+            <input type="password" name="txt-password-confirm" id="txt-password-confirm" value="">
+            <a href="#dlg-sign-up-sent" data-rel="popup" data-transition="flow" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">submit</a>
+            <section data-role="popup" id="dlg-sign-up-sent" data-dismissible="false" style="max-width:400px;">
+                <header data-role="header" data-theme="c">
+                    <h1>almost done...</h1>
+                </header>
+                <article role="main" class="ui-content">
+                    <h3>confirm your email address</h3>
+                    <p>we sent you an email with instructions on how to confirm your email address. please check your inbox and follow the instructions in the email.</p>
+                    <section class="mc-text-center"><a href="#pgSignIn" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">ok</a></section>
+                </article>
+            </section>
+        </article><!-- /content -->
+    </section><!-- /page -->
+    
+    <section data-role="page" id="pgHome" data-theme="c">
+        <header data-role="header">
+            <!-- Reserve H1 for <header>-->
+            <h1>Home</h1>
+            <!-- Create a NavBar with the right Attribute and Elements -->
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
+                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- Use <h2>/<h3> -->
+            <h2>Comics Magic</h2>
+            <h3>Largest inventory of Comics Books WW</h3>
+        </article> 
+        <footer data-role="footer" data-position="fixed">
+            <h4>Privacy Statement</h4>
+        </footer>
+    </section>
+
+    <section data-role="page" id="pgSave" data-theme="c">
+        <header data-role="header">
+            <!-- Reserve H1 for <header>-->
+            <h1>Save Items</h1>
+            <!-- Create a NavBar with the right Attribute and Elements -->
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
+                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- Use <h2>/<h3> -->
+            <h2>Save</h2>
+            <p>Coming Soon</p>
+        </article> 
+        <footer data-role="footer" data-position="fixed">
+            <h4>Privacy Statement</h4>
+        </footer>
+    </section>
+
+    <section data-role="page" id="pgView" data-theme="c">
+        <header data-role="header">
+            <!-- Reserve H1 for <header>-->
+            <h1>View Items</h1>
+            <!-- Create a NavBar with the right Attribute and Elements -->
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
+                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- Use <h2>/<h3> -->
+            <h2>View</h2>
+            <p>Coming Soon</p>
+            <form>
+                <div class="ui-field-contain">
+                    <label for="select-native-3">Category</label>
+                    <select name="select-native-3" id="select-native-3" data-iconpos="left">
+                        <option value="1">DC</option>
+                        <option value="2">Marvel</option>
+                        <option value="3">International</option>
+                    </select>
+                </div>
+            </form>
+        </article> 
+        <footer data-role="footer" data-position="fixed">
+            <h4>Privacy Statement</h4>
+        </footer>
+    </section>
+
+    <section data-role="page" id="pgOptions" data-theme="c">
+        <header data-role="header">
+            <!-- Reserve H1 for <header>-->
+            <h1>Options</h1>
+            <!-- Create a NavBar with the right Attribute and Elements -->
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
+                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- Use <h2>/<h3> -->
+            <h2>Options</h2>
+            <p>Coming Soon</p>
+        </article> 
+        <footer data-role="footer" data-position="fixed">
+            <h4>Privacy Statement</h4>
+        </footer>
+    </section>
+
+    <section data-role="page" id="pgContact" data-theme="c">
+        <header data-role="header">
+            <!-- Reserve H1 for <header>-->
+            <h1>Contact Us</h1>
+            <!-- Create a NavBar with the right Attribute and Elements -->
+            <nav data-role="navbar">
+                <ul>
+                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
+                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article role="main" class="ui-content">
+            <!-- Use <h2>/<h3> -->
+            <h2>Contact Us</h2>
+            <p>Coming Soon</p>
+        </article> 
+        <footer data-role="footer" data-position="fixed">
+            <h4>Notifications: 3</h4>
+        </footer>
+    </section>
+  
+</body>
+</html>
