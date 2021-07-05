@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ComicWhat</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <!-- Custom theme files -->
-    <link rel="stylesheet" href="css/themes/comicWarpTheme.css"/>
-    <link rel="stylesheet" href="css/themes/comicWarpTheme.min.css"/>
     <!-- Reference the JQM CSS to unlock basic sytling -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <!-- Custom colors from Themeroller-->
+    <link rel="stylesheet" href="css/themes/comicWarpTheme.min.css"/>
+    <!-- Custom CSS Code with fonts, and etc -->
+    <link href="css/stylesheet.css" rel="stylesheet" />
     <!-- Reference the jQuery JS file to access JavaScript power features  -->
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <!-- Reference the jQM JS file to access interface building features -->
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <!-- Reference to project css-->
-    <link href="css/app.css" rel="stylesheet" />
+
     
 </head>
 <body>
@@ -26,6 +26,7 @@
             <h1>Comic Warp</h1>
         </header><!-- /header -->
         <article role="main" class="ui-content">
+            <p><img src="/img/162c1d541ee97be406e944d3a50bfe4c--marvel-villains-marvel-comics.jpg" alt="comic book superhero" class="imgFull"></p>
             <h2 class="mc-text-center">Welcome!</h2>
             <p class="mc-top-margin-1-5"><b>Existing users</b></p>
             <a href="#pgSignIn" class="ui-btn ui-btn-b ui-corner-all">sign in</a>
@@ -37,26 +38,32 @@
 
     <!-- Sign In page -->
     <section data-role="page" id="pgSignIn" data-theme="c">
-        <header data-role="header">
+        <header data-role="header"> <!--data-add-back-btn="true"-->
             <a href="#pgWelcome" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">back</a>
             <h1>Let's Get Started...</h1>
         </header><!-- /header -->
         <article role="main" class="ui-content">
             <h3>sign in</h3>
-            <label for="email">email address</label>
-            <input type="email" name="email" id="email" value="">
-            <label for="txt-password">password</label>
-            <input type="password" name="txt-password" id="txt-password" value="">
-            <fieldset data-role="controlgroup">
-                <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
-                <label for="chck-rememberme">remember me</label>
-            </fieldset>
-            <!-- No data validation for now. On submit button click will transtion to Home page-->
-            <a href="#pgHome" class="ui-btn ui-btn-b ui-corner-all" data-transition="flow">submit</a>
-            <!-- <a href="#pgHome" data-rel="popup" data-transition="flow" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">submit</a> -->
+            <!-- <form> for logging in to app -->
+            <form id="formLogIn">
+                <label for="inputEmailLogIn">email address</label>
+                    <input type="email" required placeholder="bruce.wane@gotham.biz" name="inputEmailLogIn" id="inputEmailLogIn">
+                <label for="inputPasswordSignUp">password</label>
+                    <input type="password" required placeholder="SpiderM@n!" name="inputPasswordSignUp" id="inputPasswordSignUp">
+                <input type="submit" value="Log In">
+                <input type="reset" value="Clear">
+                <fieldset data-role="controlgroup">
+                    <input type="checkbox" name="chck-rememberme" id="chck-rememberme" checked="">
+                    <label for="chck-rememberme">remember me</label>
+                </fieldset>
+            </form>
 
             <!-- Link to password reset page @ pgPasswordReset-->
             <p class="mc-top-margin-1-5"><a href="#pgPasswordReset">can't access your account?</a></p>
+
+            <!-- TEMPORARY button to move us "into" the app, until we get <form> working -->
+            <a href="#pgHome">Go to pgHome</a>
+
             <!-- This section will be hooked up later -->
             <section data-role="popup" id="dlg-invalid-credentials" data-dismissible="false" style="max-width:400px;">
                 <article role="main" class="ui-content">
@@ -81,23 +88,25 @@
     </section><!-- /page -->
 
     <!-- Sign Up page -->
-    <section data-role="page" id="pgSignUp" data-theme="c">
-        <header data-role="header">
+    <section data-role="page" id="pgSignUp" data-theme="c">  <!---->
+        <header data-role="header"> <!--data-add-back-btn="true"-->
             <a href="#pgWelcome" data-rel="back" class="ui-btn-left ui-btn  ui-btn-icon-notext ui-corner-all ui-icon-back">back</a>
             <h1>I want in!</h1>
         </header><!-- /header -->
         <article role="main" class="ui-content">
             <h3>sign up</h3>
-            <label for="txt-first-name">first name</label>
-            <input type="text" name="txt-first-name" id="txt-first-name" value="">
-            <label for="txt-last-name">last name</label>
-            <input type="text" name="txt-last-name" id="txt-last-name" value="">
-            <label for="email">email address</label>
-            <input type="email" name="email" id="email" value="">
-            <label for="txt-password">password</label>
-            <input type="password" name="txt-password" id="txt-password" value="">
-            <label for="txt-password-confirm">confirm password</label>
-            <input type="password" name="txt-password-confirm" id="txt-password-confirm" value="">
+            <!-- Sign Up Form -->
+            <form id="formSignUp">
+                <label for="inputEmailSignUp">email</label>
+                    <input type="email" required placeholder="xavier@x-men.biz" name="inputEmailSignUp" id="inputEmailSignUp">
+                <label for="inputPasswordSignUp">password</label>
+                    <input type="password" required placeholder="SpiderM@n!" name="inputPasswordSignUp" id="inputPasswordSignUp">
+                <label for="inputPasswordConfirmSignUp">confirm Password</label>
+                    <input type="password" required placeholder="SpiderM@n!" name="inputPasswordConfirmSignUp" id="inputPasswordConfirmSignUp">
+                <input type="submit" value="Create Account">
+                <input type="reset" value="Clear">
+            </form>
+            <!--
             <a href="#dlg-sign-up-sent" data-rel="popup" data-transition="flow" id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">submit</a>
             <section data-role="popup" id="dlg-sign-up-sent" data-dismissible="false" style="max-width:400px;">
                 <header data-role="header" data-theme="c">
@@ -109,6 +118,7 @@
                     <section class="mc-text-center"><a href="#pgSignIn" class="ui-btn ui-corner-all ui-shadow ui-btn-b mc-top-margin-1-5">ok</a></section>
                 </article>
             </section>
+            -->
         </article><!-- /content -->
     </section><!-- /page -->
     
@@ -120,9 +130,9 @@
             <!-- Create a NavBar with the right Attribute and Elements -->
             <nav data-role="navbar">
                 <ul>
-                    <li><a href="#pgHome" data-icon="home">Home</a></li>
+                    <li><a href="#pgHome" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgView" data-icon="bars">View</a></li>
                     <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
@@ -130,9 +140,10 @@
         </header>
         <article role="main" class="ui-content">
             <!-- Use <h2>/<h3> -->
-            <h2>What is Comic Warp?</h2>
-            <p>Largest inventory of Comics Books WW</p>
-            <p>More to come</p>
+            <h2>Come on in...</h2>
+            <p><img src="/img/ae92001ebb70154ec7c363b6f8df9745.jpg" alt="comic book character - Predator" class="imgFull"></p>
+            <p>Comic Warp is the plannet's largest marketplace of comic books. Single Issue, Prestige Edition, Digital Comics, Digital First, Collected Edition, all are at your fingertips. Buy, sell, and trade all from here.</p>
+            <p>More to come...</p>
         </article> 
         <footer data-role="footer" data-position="fixed">
             <!-- Give thought to what information to place in footer-->
@@ -147,8 +158,8 @@
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
-                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgSave" data-icon="plus" class="ui-btn-active ui-state-persist">Save</a></li>
+                    <li><a href="#pgView" data-icon="bars">View</a></li>
                     <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
@@ -159,7 +170,7 @@
             <p>Coming Soon</p>
         </article> 
         <footer data-role="footer" data-position="fixed">
-            <h4>Privacy Statement</h4>
+            <h4>Recent Arrivals</h4>
         </footer>
     </section>
 
@@ -171,7 +182,7 @@
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgView" data-icon="bars" class="ui-btn-active ui-state-persist">View</a></li>
                     <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
@@ -192,7 +203,7 @@
             </form>
         </article> 
         <footer data-role="footer" data-position="fixed">
-            <h4>Privacy Statement</h4>
+            <h4>Recent Arrivals</h4>
         </footer>
     </section>
 
@@ -204,18 +215,19 @@
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="eye">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
+                    <li><a href="#pgView" data-icon="bars">View</a></li>
+                    <li><a href="#pgOptions" data-icon="gear" class="ui-btn-active ui-state-persist">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <article role="main" class="ui-content">
             <h2>Options</h2>
+            <a href="#pgWelcome">Log out</a>
             <p>Coming Soon</p>
         </article> 
         <footer data-role="footer" data-position="fixed">
-            <h4>Privacy Statement</h4>
+            <h4>Access My Profile</h4>
         </footer>
     </section>
 
@@ -227,9 +239,9 @@
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="eye">View</a></li>
+                    <li><a href="#pgView" data-icon="bars">View</a></li>
                     <li><a href="#pgOptions" data-icon="gear">Options</a></li>
-                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
+                    <li><a href="#pgContact" data-icon="mail" class="ui-btn-active ui-state-persist">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -238,7 +250,7 @@
             <p>Coming Soon</p>
         </article> 
         <footer data-role="footer" data-position="fixed">
-            <h4>Notifications: 3</h4>
+            <h4>Recent Notifications: 3</h4>
         </footer>
     </section>
 </body>

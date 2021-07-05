@@ -24,3 +24,8 @@ h3.mc-text-danger  {
 .mc-top-margin-1-5 {
     margin-top:1.5em;
 }
+
+/* Class to apply to any image to not exceed container boundry */
+.imgFull {
+    width: 100%;
+}
