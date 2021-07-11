@@ -26,7 +26,7 @@
             <h1>Comic Warp</h1>
         </header><!-- /header -->
         <article role="main" class="ui-content">
-            <p><img src="img/162c1d541ee97be406e944d3a50bfe4c--marvel-villains-marvel-comics.jpg" alt="comic book superhero" class="imgFull"></p>
+            <p><img src="img/marvel-villains-marvel-comics1.jpg" alt="comic book superhero" class="imgFull"></p>
             <h2 class="mc-text-center">Welcome!</h2>
             <p class="mc-top-margin-1-5"><b>Existing users</b></p>
             <a href="#pgSignIn" class="ui-btn ui-btn-b ui-corner-all">sign in</a>
@@ -128,13 +128,12 @@
             <!-- Reserve H1 for <header>-->
             <h1>Home</h1>
             <!-- Create a NavBar with the right Attribute and Elements -->
-            <a href="#pgOptions" data-transition="pop" data-icon="gear" class="ui-btn-right">options</a>
+            <a href="#pgOptions" data-transition="pop" data-icon="gear" class="ui-btn-right" data-iconpos="notext">options</a>
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#pgHome" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
                     <li><a href="#pgView" data-icon="bars">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
             </nav>
@@ -142,7 +141,7 @@
         <article role="main" class="ui-content">
             <!-- Use <h2>/<h3> -->
             <h2>Come on in...</h2>
-            <p><img src="img/ae92001ebb70154ec7c363b6f8df9745.jpg" alt="comic book character - Predator" class="imgFull"></p>
+            <p><img src="img/marvel-villains-marvel-comics2.jpg" alt="comic book character - Predator" class="imgFull"></p>
             <p>Comic Warp is the plannet's largest comic books marketplace. Single Issue, Prestige Edition, Digital Comics, Digital First, Collected Edition, all are at your fingertips. Buy, sell, and trade all from here.</p>
             <p>More to come...</p>
         </article> 
@@ -156,12 +155,12 @@
     <section data-role="page" id="pgSave" data-theme="c">
         <header data-role="header">
             <h1>Save Items</h1>
+            <a href="#pgOptions" data-transition="pop" data-icon="gear" class="ui-btn-right" data-iconpos="notext">options</a>
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus" class="ui-btn-active ui-state-persist">Save</a></li>
                     <li><a href="#pgView" data-icon="bars">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
             </nav>
@@ -179,12 +178,12 @@
     <section data-role="page" id="pgView" data-theme="c">
         <header data-role="header">
             <h1>View Items</h1>
+            <a href="#pgOptions" data-transition="pop" data-icon="gear" class="ui-btn-right" data-iconpos="notext">options</a>
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
                     <li><a href="#pgView" data-icon="bars" class="ui-btn-active ui-state-persist">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail">Contact</a></li>
                 </ul>
             </nav>
@@ -209,39 +208,26 @@
     </section>
 
     <!-- Options page -->    
-    <section data-role="page" id="pgOptions" data-theme="c">
+    <section data-role="page" id="pgOptions" data-dialog="true" data-theme="c">
         <header data-role="header">
             <h1>Options</h1>
-            <nav data-role="navbar">
-                <ul>
-                    <li><a href="#pgHome" data-icon="home">Home</a></li>
-                    <li><a href="#pgSave" data-icon="plus">Save</a></li>
-                    <li><a href="#pgView" data-icon="bars">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear" class="ui-btn-active ui-state-persist">Options</a></li>
-                    <li><a href="#pgContact" data-icon="mail">Contact</a></li>
-                </ul>
-            </nav>
         </header>
         <article role="main" class="ui-content">
             <h2>Options</h2>
             <a href="#pgWelcome">Log out</a>
-            <p>Coming Soon</p>
-        </article> 
-        <footer data-role="footer" data-position="fixed">
-            <h4>Access My Profile</h4>
-        </footer>
+        </article>
     </section>
 
     <!-- Contact page -->  
     <section data-role="page" id="pgContact" data-theme="c">
         <header data-role="header">
             <h1>Contact Us</h1>
+            <a href="#pgOptions" data-transition="pop" data-icon="gear" class="ui-btn-right" data-iconpos="notext">options</a>
             <nav data-role="navbar">
                 <ul>
                     <li><a href="#pgHome" data-icon="home">Home</a></li>
                     <li><a href="#pgSave" data-icon="plus">Save</a></li>
                     <li><a href="#pgView" data-icon="bars">View</a></li>
-                    <li><a href="#pgOptions" data-icon="gear">Options</a></li>
                     <li><a href="#pgContact" data-icon="mail" class="ui-btn-active ui-state-persist">Contact</a></li>
                 </ul>
             </nav>
