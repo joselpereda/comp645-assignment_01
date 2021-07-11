@@ -166,8 +166,28 @@
             </nav>
         </header>
         <article role="main" class="ui-content">
-            <h2>Save</h2>
-            <p>Coming Soon</p>
+            <!-- Form to gather the data the User is saving-->
+            <form id="formSaveComics">
+                <!--Fieldset for grouping logical elements of a form-->
+                <fieldset>
+                    <legend><strong>Required</strong></legend>
+                    <label for="inputTitleSave">Title:</label>
+                        <input required type="text" placeholder="Batman" name="inputTitleSave" id="inputTitleSave">
+                    <label for="inputNumberSave">Number:</label>
+                        <input required type="number" placeholder="1" name="inputNumberSave" id="inputNumberSave">
+                    <label for="inputYearSave">Year:</label>
+                        <input require type="number" placeholder="1940" name="inputYearSave" id="inputYearSave">
+                </fieldset>
+                <fieldset>
+                    <legend><strong>Optional</strong></legend>
+                    <label for="inputPublisherSave">Publisher:</label>
+                        <input type="text" placeholder="DC Comics" name="inputPublisherSave" id="inputPublisherSave">
+                    <label for="inputNotesSave">Notes:</label>
+                        <textarea placeholder="First issue of self-titled series" name="inputNotesSave" id="inputNotesSave"></textarea>
+                </fieldset>
+                <input type="reset" value="clear">
+                <input type="submit" value="Save">
+            </form>
         </article> 
         <footer data-role="footer" data-position="fixed">
             <h4>Recent Arrivals</h4>
